@@ -1,0 +1,28 @@
+<div class="form-container">
+    <div class="edit-header">
+        Edit Salary
+    </div>
+    <div class="edit-content" (ngSubmit)="updateSalary()" [formGroup]="salaryForm">
+        <mat-form-field appearance="fill" class="input-field">
+            <mat-label>Base</mat-label>
+            <input matInput formControlName="base">
+            <mat-error *ngIf="this.salaryForm.get('base').invalid">{{getErrorMessage('base')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+            <mat-label>Allowance</mat-label>
+            <input matInput formControlName="allowance">
+            <mat-error *ngIf="this.salaryForm.get('allowance').invalid">{{getErrorMessage('allowance')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+            <mat-label>Special Allowance</mat-label>
+            <input matInput formControlName="specialAllowance">
+            <mat-error *ngIf="this.salaryForm.get('specialAllowance').invalid">{{getErrorMessage('specialAllowance')}}</mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="updateSalary()" class="button">
+            <mat-icon>add</mat-icon>
+            Update
+        </button>
+    </div>
+    
+</div>

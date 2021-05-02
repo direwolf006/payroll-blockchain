@@ -1,0 +1,34 @@
+.card{
+    width: 300px;
+    height : 220px;
+    margin: 1%;
+}
+
+.dashboard-container{
+    margin: 5%;
+}
+
+.card-container{
+    padding: 5%;
+    padding-left: 8%;
+}
+
+.list-item{
+    font-size: 12pt;
+}
+
+.card-header-container-label{
+    display: flex;
+    padding-top: 15px;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(61, 182, 111);
+    color: white;
+    width: 305px;
+
+}
+
+.card-header-label{
+    font-size: large;
+    padding-top: 5px;
+}

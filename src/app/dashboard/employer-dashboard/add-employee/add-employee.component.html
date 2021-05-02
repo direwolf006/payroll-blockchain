@@ -1,0 +1,80 @@
+
+<h3 class="page-header"> Add New Employee </h3>
+<div class="form-container" [formGroup]="addEmployeeForm">
+    <h3 class="sub-header">About</h3>
+    <div class="sub-container">
+        <div style="margin-right: 10px;">
+            <mat-form-field appearance="fill" class="input-field" >
+                <mat-label>Name</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Designation</mat-label>
+                <input matInput formControlName="designation">
+            </mat-form-field>
+        </div>
+        <div style="margin-right: 10px;">
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Department</mat-label>
+                <input matInput formControlName="department">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password">
+            </mat-form-field>
+        </div>
+        
+    </div>
+
+    <h3 class="sub-header">Bank Details</h3>
+    <div class="sub-last-container">
+        <div>
+            <mat-form-field appearance="fill" class="input-field" style="margin-right: 44px;">
+                <mat-label>Bank Name</mat-label>
+                <input matInput formControlName="bankName">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>A/c No :</mat-label>
+                <input matInput formControlName="accountNumber">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" class="input-field" style="margin-right: 45px;">
+                <mat-label>IFSC Code</mat-label>
+                <input matInput formControlName="IFSCCode">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Branch</mat-label>
+                <input matInput formControlName="branch">
+            </mat-form-field>
+        </div>   
+    </div>
+    
+    <h3 class="sub-header">Salary Structure</h3>
+    <div class="sub-last-container">
+        <div>
+            <mat-form-field appearance="fill" class="input-field" style="margin-right: 45px;">
+                <mat-label>Base</mat-label>
+                <input matInput  formControlName="base">
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="input-field">
+                <mat-label>Allowance</mat-label>
+                <input matInput formControlName="allowance">
+            </mat-form-field>
+        </div>
+            <mat-form-field appearance="fill" class="input-field" style="margin-right: 45px;">
+                <mat-label>Special Allowance</mat-label>
+                <input matInput formControlName="specialAllowance">
+            </mat-form-field> 
+    </div>
+    <button mat-raised-button (click)="onAddEmployee()" class="button">
+        <mat-icon>person_add</mat-icon>
+        Add Employee
+    </button>
+</div>

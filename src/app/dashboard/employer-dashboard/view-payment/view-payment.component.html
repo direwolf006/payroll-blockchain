@@ -1,0 +1,41 @@
+<h3 class="page-header"> View Payments </h3>
+<div class="history-list-container" >
+    <mat-accordion class="history-list-item" multi *ngFor="let employeePaymentData of employeesPaymentData; let i=index ">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="expansion-panel-header">
+            <mat-panel-title>
+              Employee Name : {{employeePaymentData.name}}
+            </mat-panel-title>
+            <mat-panel-title>
+              Amount to pay: {{parseVal(employeePaymentData.base)+parseVal(employeePaymentData.allowance)+parseVal(employeePaymentData.specialAllowance)}}
+            </mat-panel-title>
+            <mat-panel-title>
+              Bonus : 15000
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="panel-container">
+            <mat-list role="list" class="card-container">
+              <li class="list-item">Bank Name : {{employeePaymentData.bankName}}</li>
+              <li class="list-item">Account Ending : {{employeePaymentData.accountNumber}}</li>
+              <li class="list-item">IFSC Code : {{employeePaymentData.IFSCCode}}</li>
+              <li class="list-item">Branch : {{employeePaymentData.branchName}}</li>
+            </mat-list>
+          </div>
+          <button mat-raised-button color="primary" style="float: right;" (click)="openBonusEdit(i)">
+            <mat-icon>launch</mat-icon>
+              Pay
+          </button>
+          <!-- <button mat-stroked-button color="primary" style="float: right;margin-right: 20px;" (click)="openBonusEdit()">
+            <mat-icon>edit</mat-icon>
+              Edit Bonus
+          </button> -->
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div *ngIf="employeesPaymentData!==null && employeesPaymentData.length==0">
+      <h3 style="text-align: center;">No Payments need to be done</h3>
+    </div>
+    <!-- <button mat-raised-button color="primary" style="margin: 5% 45%;" disabled="true">
+        <mat-icon>money</mat-icon>
+            Make Payment
+    </button> -->
+</div>

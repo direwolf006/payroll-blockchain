@@ -1,0 +1,28 @@
+<div class="form-container">
+    <div class="edit-header">
+        Edit Details
+    </div>
+    <div class="edit-content" [formGroup]="aboutForm">
+        <mat-form-field appearance="fill" class="input-field" >
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+            <mat-error *ngIf="aboutForm.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+            <mat-label >Department</mat-label>
+            <input matInput formControlName="department">
+            <mat-error *ngIf="aboutForm.get('department').invalid">{{getErrorMessage('department')}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+            <mat-label>Designation</mat-label>
+            <input matInput formControlName="designation">
+            <mat-error *ngIf="aboutForm.get('designation').invalid">{{getErrorMessage('designation')}}</mat-error>
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="updateDetails()" class="button">
+            <mat-icon>add</mat-icon>
+            Update
+        </button>
+    </div>
+    
+</div>

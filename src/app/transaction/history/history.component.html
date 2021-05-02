@@ -1,0 +1,59 @@
+<h3 class="page-header"> Transaction History </h3>
+
+<div class="history-list-container" >
+    <mat-accordion class="history-list-item" multi *ngFor="let transaction of transactionData">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="expansion-panel-header">
+            <mat-panel-title >
+              Date : {{ transaction.monthYear }}
+            </mat-panel-title>
+            <mat-panel-title >
+              Amount : {{ transaction.amount}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="panel-container">
+            <mat-list role="list" class="card-container">
+              <li class="list-item">Time : {{transaction.time}}</li>
+              <li class="list-item">Date : {{transaction.date}}</li>
+              <li class="list-item">Transaction ID : {{transaction.transactionId}}</li>
+              <li class="list-item">Bank Name : {{transaction.bankName}}</li>
+              <li class="list-item">Account Ending : {{transaction.accountNumber}}</li>
+              <li class="list-item">IFSC Code : {{transaction.IFSCCode}}</li>
+              <li class="list-item">Branch : {{transaction.branch}}</li>
+            </mat-list>
+          </div>
+          
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div *ngIf="transactionData!==null && transactionData.length==0">
+      <h3 style="text-align: center;">No Transaction History Found</h3>
+    </div>
+</div>
+<!-- <h3 class="page-header"> Transaction History </h3>
+
+<div class="history-list-container" >
+    <mat-accordion class="history-list-item" multi *ngFor="let transaction of transactionData">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="expansion-panel-header">
+            <mat-panel-title >
+              Date : {{ transaction.monthYear }}
+            </mat-panel-title>
+            <mat-panel-title >
+              Amount : {{ transaction.amount}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list role="list" class="card-container">
+            <p class="list-item">Time : {{transaction.time}}</p>
+            <p class="list-item">Date : {{transaction.date}}</p>
+            <p class="list-item">Transaction ID : {{transaction.transactionId}}</p>
+            <p class="list-item">Bank Name : {{transaction.bankName}}</p>
+            <p class="list-item">Account Ending : {{transaction.accountNumber}}</p>
+            <p class="list-item">IFSC Code : {{transaction.IFSCCode}}</p>
+            <p class="list-item">Branch : {{transaction.branch}}</p>
+          </mat-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div *ngIf="transactionData!==null && transactionData.length==0">
+      <h3 style="text-align: center;">No Payments need to be done</h3>
+    </div>
+</div> -->

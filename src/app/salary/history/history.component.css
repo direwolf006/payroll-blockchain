@@ -1,0 +1,41 @@
+.history-list-container{
+    margin: 5% 5% ;
+}
+
+.history-list-item{
+    margin: 200px;
+}
+
+.mat-list{
+    padding-left: 65;
+    padding-bottom: 8;
+}
+
+.expansion-panel-header{
+    background-color: rgb(114, 162, 211);
+    color:white;
+
+}
+
+.list-item{
+    padding-top: 15px;
+}
+
+.page-header{
+    background-color: rgb(197, 148, 56);
+    height: 35px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 12px;
+    margin: 2% 5% 2% 5%;
+}
+
+.panel-container,.mat-expansion-panel-body{
+    width: 100%;
+    background-color: rgb(73, 160, 148);
+    color: white;
+    margin-top:15px;
+    border-radius: 20px;
+    height: 210px;
+}

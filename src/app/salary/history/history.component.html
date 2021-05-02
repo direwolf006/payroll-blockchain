@@ -1,0 +1,28 @@
+<h3 class="page-header"> Salary History </h3>
+<div class="history-list-container" >
+    <mat-accordion class="history-list-item" multi *ngFor="let salary of salaryData">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="expansion-panel-header" >
+            <mat-panel-title >
+              Date : {{ (salary.monthYear) }}
+            </mat-panel-title>
+            <mat-panel-title >
+              Amount : {{ salary.gross}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="panel-container">
+            <mat-list role="list" class="card-container">
+              <li  class="list-item">Base : {{salary.base}}</li>
+              <li class="list-item">Allowance : {{salary.allowance}}</li>
+              <li class="list-item">Special Allowance : {{salary.specialAllowance}}</li>
+              <li class="list-item">Bonus : {{salary.bonus}}</li>
+              <li class="list-item">Gross : {{salary.gross}}</li>
+  
+            </mat-list>
+          </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+    <div *ngIf="salaryData!==null && salaryData.length==0">
+      <h3 style="text-align: center;">No Salary History Found</h3>
+    </div>
+</div>

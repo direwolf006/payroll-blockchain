@@ -1,0 +1,190 @@
+<div class="dashboard-container">
+    <div style="display: flex;margin-top: -3%;">
+        <mat-icon class="icon-button" style="color: rgb(255, 254, 254);font-size: 25pt;" >account_circle</mat-icon>
+        <h3 class="list-item" style="color: rgb(255, 254, 254);">Welcome, {{employeeData.about.name}}</h3>
+    </div>
+    <hr class="rounded">
+
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container">
+                        <div class="card-header-container-label">
+                            <div mat-card-avatar class="example-header-image">
+                                <mat-icon >person</mat-icon>
+                            </div>
+                            <mat-card-title class="card-header-label">About</mat-card-title>
+                        </div>
+                        <div *ngIf="userType==='Employer'">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="openDetailsEdit()">
+                                <mat-icon class="icon-button">edit</mat-icon>
+                            </button>
+                        </div> 
+                    </div>
+                <mat-card-content>
+                      <mat-list role="list" class="card-container">
+                        <p class="list-item">ID : {{employeeData.about.id}}</p>
+                        <p class="list-item">Name : {{employeeData.about.name}}</p>
+                        <p class="list-item">Department : {{employeeData.about.department}}</p>
+                        <p class="list-item">Designation : {{employeeData.about.designation}}</p>
+                      </mat-list>
+                </mat-card-content>
+            </mat-card>
+            
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>analytics</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">This Month Stats</mat-card-title>
+                </div>
+                <mat-card-content>
+                    <canvas
+                    class="chart"
+                    baseChart
+                    [data]="monthStatsData"
+                    [options]="options"
+                    [labels]="monthStatsLabel"
+                    [chartType]="monthStatsType"
+                    [colors]="pieChartColors"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+                    
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>pending_actions</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Arrival Timings</mat-card-title>
+                </div>
+                <mat-card-content>
+                    <canvas
+                    class="chart"
+                    baseChart
+                    [data]="arrivalStatsData"
+                    [options]="options"
+                    [labels]="arrivalStatsLabel"
+                    [chartType]="arrivalStatsType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)"></canvas>
+                    
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container">
+                    <div class="card-header-container-label">
+                        <div mat-card-avatar class="example-header-image">
+                            <mat-icon >receipt</mat-icon>
+                        </div>
+                        <mat-card-title class="card-header-label">Salary Breakdown</mat-card-title>
+                    </div>
+                    <div *ngIf="userType==='Employer'">
+                        <button mat-icon-button color="primary" aria-label="Example icon button with a home icon" (click)="openSalaryEdit()">
+                            <mat-icon class="icon-button">edit</mat-icon>
+                        </button>
+                    </div> 
+                </div>
+                <mat-card-content>
+                    <mat-list role="list" class="card-container">
+                        <p class="list-item">Base : {{employeeData.salary.base}}</p>
+                        <p class="list-item">Allowance : {{employeeData.salary.allowance}}</p>
+                        <p class="list-item">Special Allowance : {{employeeData.salary.specialAllowance}}</p>
+                        <p class="list-item">Gross : {{employeeData.salary.gross}}</p>
+                      </mat-list>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-ratings">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>stars</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Ratings</mat-card-title>
+                </div>
+                <mat-card-content>
+                    <mat-list role="list" fxLayout="row" fxLayoutAlign="space-around center" >
+                        <mat-list-item  role="listitem"  *ngFor="let num of [1,2,3,4,5]">
+                            <mat-icon  class="list" style="color: #D4AF37;font-size: 25px;">star</mat-icon>
+                        </mat-list-item>
+                    </mat-list>
+                    <h2 style="text-align: center;margin-top: 50px;">Overall Rating : 4</h2>
+                </mat-card-content>
+            </mat-card>
+            <!-- <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>person</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Remarks</mat-card-title>
+                </div>
+                <mat-card-content>
+                    <mat-list role="list" class="card-container">
+                        <li class="list-item">Best Employee Awared for the month Feb 2021</li>
+                        <li class="list-item">Completed Project X ahead of timeline</li>
+                      </mat-list>
+                </mat-card-content>
+            </mat-card> -->
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>assignment</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Salary History</mat-card-title>
+                </div>
+                <mat-card-content>
+                      <div class="card-container">
+                        <p class="list-item">Worked for 3 years</p>
+                        <button mat-raised-button color="primary" (click)="onViewSalaryHistory()">
+                            <mat-icon>open_in_new</mat-icon>
+                            View Salary History
+                        </button>
+                      </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>book</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Transaction History</mat-card-title>
+                </div>
+                <mat-card-content>
+                      <div class="card-container">
+                        <p class="list-item">Worked for 3 years</p>
+                        <button mat-raised-button color="primary" (click)="onViewTransactionHistory()">
+                            <mat-icon>open_in_new</mat-icon>
+                            View Transaction History
+                        </button>
+                      </div>
+                </mat-card-content>
+            </mat-card>
+    </div>
+    <!-- <div>
+        <mat-card class="salary-chart" id="employee-details">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                    <mat-icon>person</mat-icon>
+                </div>
+                <mat-card-title>Salary Chart</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <canvas baseChart width="400" height="400"
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+                <mat-radio-group aria-label="Select an period" class="salary-options">
+                    <mat-radio-button value="1">Monthly</mat-radio-button>
+                    <mat-radio-button value="2">Quarterly</mat-radio-button>
+                    <mat-radio-button value="2">Half-Yearly</mat-radio-button>
+                    <mat-radio-button value="2">Yearly</mat-radio-button>
+                </mat-radio-group>
+            </mat-card-content>
+        </mat-card>
+    </div> -->
+</div>
+
+
+

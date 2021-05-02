@@ -1,0 +1,37 @@
+.history-list-container{
+    margin: 5% 5% ;
+}
+
+.history-list-item{
+    margin: 200px;
+}
+
+.expansion-panel-header{
+    background-color: rgb(114, 162, 211);
+    color:white;
+
+}
+
+.list-item{
+    padding-top: 15px;
+}
+
+.page-header{
+    background-color: rgb(197, 148, 56);
+    height: 35px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 12px;
+    margin: 2% 5% 2% 5%;
+}
+
+.panel-container,.mat-expansion-panel-body{
+    width: 93%;
+    background-color: rgb(218, 132, 218);;
+    color: white;
+    margin-top:15px;
+    border-radius: 20px;
+    padding-left: 100px;
+    height: 300px;
+}

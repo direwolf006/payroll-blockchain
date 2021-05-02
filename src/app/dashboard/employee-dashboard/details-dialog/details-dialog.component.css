@@ -1,0 +1,29 @@
+.form-container{
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.edit-header{
+    background-color: rgb(57, 130, 202);
+    color: white;
+    width: 400px;
+    height: 45px;
+    text-align: center;
+    font-size: larger;
+    padding-top: 20px;
+
+}
+
+.mat-dialog-container {
+    padding:0;
+}
+
+.button{
+    margin: 35px;
+}
+
+.edit-content{
+    margin-top: 25px;
+}
+

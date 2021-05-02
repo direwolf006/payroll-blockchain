@@ -1,0 +1,88 @@
+.search-input-container{
+    text-align: center;
+    background: #000046;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #1CB5E0, #662385);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #1CB5E0, #662385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin-top: 0px;
+    padding-top: 50px;
+    height:250px;
+}
+
+.search-label{
+    color: white;
+    margin-top: 0;
+}
+
+.search-form-field{
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 400px;
+    height: 45px;
+    display: flex;
+    color: white;
+    margin: 5% 20% 20% 38%;
+    padding: 2px;
+}
+::placeholder {
+    color: rgb(255, 251, 251);
+    opacity: 0.75;
+  }
+
+.search-input{
+    border: none;
+    text-align: center;
+    outline: none;
+    color: white;
+    height: 25px;
+    background-color: rgb(177, 76, 81);
+    font-size: x-large;
+    width: 350px;
+    margin-top: 10px;    
+}
+
+.employee-list-container{
+    padding: 5% 10%;
+}
+
+mat-card{
+    padding: 0;
+}
+
+mat-card-content{
+    padding: 2%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.employee-details{
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+
+.view-employee{
+    height: max-content;
+    margin-top: 20px;
+
+}
+
+.employee-card{
+    margin-bottom: 2%;
+    box-shadow: rgb(86, 109, 139);
+    border: 0.5px solid rgb(90, 138, 160);
+}
+
+.card-header-container-label{
+    display: flex;
+    padding-top: 15px;
+    padding-left: 10px;
+    border-radius: 5px;
+    background-color: rgb(61, 182, 111);
+    color: white;
+    width: 1203px;
+}
+
+.list-item{
+    font-size: large;
+}

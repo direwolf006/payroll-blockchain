@@ -1,0 +1,78 @@
+<div class="dashboard-container">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>groups</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Employees Details</mat-card-title>
+                </div>
+                <mat-card-content>
+                      <mat-list role="list" class="card-container">
+                        <p class="list-item">Total Employees : 126</p>
+                        <button mat-raised-button color="primary" (click)="onViewEmployees()">
+                            <mat-icon>people</mat-icon>
+                            View Employees
+                        </button>
+                      </mat-list>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>payment</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Payment</mat-card-title>
+                </div>
+                <mat-card-content>
+                      <div class="card-container">
+                        <p class="list-item">Total Employees : 126</p>
+                        <p class="list-item">2 Days to make payment</p>
+                        <button mat-raised-button color="primary" (click)="onViewPayment()">
+                            <mat-icon>payments</mat-icon>
+                                View Payment
+                        </button>
+                      </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>pending_actions</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Transactions</mat-card-title>
+                </div>
+                <mat-card-content>
+                      <div class="card-container">
+                        <p class="list-item">Total Employees : 126</p>
+                        <p class="list-item">2 Days to make payment</p>
+                        <button mat-raised-button color="primary" (click)="onViewTransactions()">
+                            <mat-icon>receipt_long</mat-icon>
+                                View All Transactions
+                        </button>
+                      </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="card" id="employee-details">
+                <div class="card-header-container-label">
+                    <div mat-card-avatar class="example-header-image">
+                        <mat-icon>person_add_alt_1</mat-icon>
+                    </div>
+                    <mat-card-title class="card-header-label">Add Employee</mat-card-title>
+                </div>
+                <mat-card-content>
+                      <div class="card-container">
+                        <p class="list-item">Total Employees : 126</p>
+                        <button mat-raised-button color="primary" (click)="onAddEmployee()">
+                            <mat-icon>person_add_alt</mat-icon>
+                            Add Employee
+                        </button>
+                      </div>
+                </mat-card-content>
+            </mat-card>
+            
+    </div>
+</div>
+
+
+

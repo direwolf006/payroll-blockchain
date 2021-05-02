@@ -1,0 +1,43 @@
+.form-container {
+    align-items: flex-start;
+    margin: 5% 10% 10% 10%;
+}
+
+.input-field{
+    width: 375px;
+    margin-right: 5px;
+}
+
+.sub-container{
+    display: flex;
+    
+}
+
+.sub-header{
+    background-color: rgb(57, 130, 202);
+    height: 35px;
+    color: white;
+    border-radius: 10px;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 12px;
+    margin-bottom: 50px;
+    width: 350px;
+}
+
+.page-header{
+    background-color: rgb(57, 130, 202);
+    height: 35px;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 12px;
+    margin: 2% 5% 2% 5%;
+}
+
+.button{
+    margin: 5% 45%;
+    font-size: larger;
+    background-color: rgb(53, 134, 53);
+    color: white;
+}

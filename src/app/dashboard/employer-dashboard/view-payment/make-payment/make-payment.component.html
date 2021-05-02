@@ -1,0 +1,27 @@
+<div class="form-container">
+    <div class="edit-header">
+        Make Payment
+    </div>
+    <div class="edit-content">
+        <div>
+            <ul>
+                <li class="list-item"> ID : {{data.employeeData.employee_id}}</li>
+                <li class="list-item"> Name : {{data.employeeData.name}}</li>
+                <li class="list-item">BankName : {{data.employeeData.bankName}}</li>
+                <li class="list-item">Account Number : {{data.employeeData.accountNumber}}</li>
+                <li class="list-item">Branch : {{data.employeeData.branchName}}</li>
+                <li class="list-item">IFSC Code : {{data.employeeData.IFSCCode}}</li>
+                <li class="list-item">Amount : {{amount}}</li>
+
+            </ul>
+        </div>
+        <mat-form-field appearance="fill" class="input-field">
+            <mat-label>Bonus</mat-label>
+            <input matInput [formControl]="bonus">
+        </mat-form-field>
+        <br>
+        <button mat-raised-button color="primary" (click)="payEmployee()" class="button">
+            <mat-icon>launch</mat-icon>
+            Pay
+        </button>
+    </div>

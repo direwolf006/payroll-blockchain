@@ -1,0 +1,14 @@
+.tab-component{
+    margin: 10% 25% 5% 35%;
+    width: 30%; 
+    background-color: white;   
+}
+ .mat-tab-label:active{
+    background-color: rgb(129, 29, 236);
+    color: white;
+}
+
+.mat-tab-label{
+    background-color: rgb(129, 57, 201);
+    color: white;
+}

@@ -1,0 +1,49 @@
+<mat-toolbar style="background-color: rgb(219, 112, 80);">
+    <div style="justify-content: space-between;display: flex;width:100%;">
+      <img src="/assets/images/paylane-logo.png" class="toolbar-logo" routerLink="/" routerLinkActive="active"/>
+      <div *ngIf="(isMedium||isLarge||isXLarge) && loggedIn" class="toolbarButtons">
+        
+        <a mat-button *ngIf="userType==='Employee'" routerLink="/dashboard/employee" routerLinkActive="active" class="menu-item">
+          <mat-icon>home</mat-icon>
+          Home</a>
+        <a mat-button *ngIf="userType==='Employer'" routerLink="/dashboard/employer" routerLinkActive="active" class="menu-item">
+          <mat-icon>home</mat-icon>
+          Home</a>
+        <a mat-button *ngIf="userType==='Employee'" routerLink="/dashboard/employee/salary" routerLinkActive="active" class="menu-item">
+          <mat-icon>analytics</mat-icon>
+          Salary History</a>
+        <a mat-button *ngIf="userType==='Employee'" routerLink="/dashboard/employee/transaction" routerLinkActive="active" class="menu-item">
+          <mat-icon>contact_mail</mat-icon>
+          Transaction History</a>
+        <button mat-raised-button (click)="onLogout()"  style="background-color: rgb(194, 42, 42);color: white;">
+          <mat-icon>logout</mat-icon>
+          logout</button>
+      </div>
+    </div>
+        <button mat-icon-button *ngIf="(isSmall||isXSmall) && loggedIn" [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu" xPosition="before">
+          <button mat-menu-item routerLink="/dashboard/employee" routerLinkActive="active">
+            <mat-icon>home</mat-icon>
+            <span>Employee Dashboard</span>
+          </button>
+          <button mat-menu-item routerLink="/dashboard/employer" routerLinkActive="active">
+            <mat-icon>shop_2</mat-icon>
+            <span>Employer Dashboard</span>
+          </button>
+          <button mat-menu-item routerLink="/dashboard/employee/salary" routerLinkActive="active">
+            <mat-icon>analytics</mat-icon>
+            <span>Salary History</span>
+          </button>
+          <button mat-menu-item routerLink="/dashboard/employee/transaction" routerLinkActive="active">
+            <mat-icon>home</mat-icon>
+            <span>Transaction History</span>
+          </button>
+          <button mat-menu-item (click)="onLogout()">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+  </mat-toolbar>
+  

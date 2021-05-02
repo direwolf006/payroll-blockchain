@@ -1,0 +1,22 @@
+
+.toolbar-logo{
+    max-width: 140px;
+    max-height: 120px;
+    margin-left: 20px;
+    outline: none;
+}
+
+.toolbarButtons{
+    text-align: center;
+    margin-top: 6px;
+}
+  
+.menu-item{
+    margin-right: 15px;
+    color: white;
+}
+
+.menu-item:hover{
+    background-color: rgb(226, 189, 24);
+    color: white;
+}
